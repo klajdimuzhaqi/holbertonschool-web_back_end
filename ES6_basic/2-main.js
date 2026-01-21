@@ -1,11 +1,5 @@
-export default function taskBlock(trueOrFalse) {
-    let task = false;
-    let task2 = true;
+import getNeighborhoodsList from './2-arrow.js';
 
-    if (trueOrFalse) {
-        task = true;
-        task2 = false;
-    }
-
-    return [task, task2];
-}
+const neighborhoodsList = new getNeighborhoodsList();
+const res = neighborhoodsList.addNeighborhood('Noe Valley');
+console.log(res);
