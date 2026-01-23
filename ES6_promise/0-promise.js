@@ -4,3 +4,5 @@ export default function getResponseFromApi() {
     reject(new Error('Something bad happended.'));
   });
 }
+
+
