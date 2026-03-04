@@ -1,12 +1,15 @@
--- Create a function and divides two numbers
-DELIMITER $
+-- creates a function SafeDiv that divides a by b and returns 0 if b = 0
+DELIMITER $$
+
 CREATE FUNCTION SafeDiv(a INT, b INT)
 RETURNS FLOAT
+DETERMINISTIC
 BEGIN
-    IF b != 0 THEN
-        RETURN a / b;
-    ELSE
+    IF b = 0 THEN
         RETURN 0;
+    ELSE
+        RETURN a / b;
     END IF;
-END;
-$
+END $$
+
+DELIMITER ;
